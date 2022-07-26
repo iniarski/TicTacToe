@@ -146,19 +146,33 @@ public class TicTacToe {
                 }
             }
         }
-
+        
+    private boolean oneMoreRound (){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Do you want to play again? [Y/n] ");
+        while (true){
+            char answer = scanner.next().charAt(0);
+            if (answer == 'y' || answer == 'Y')
+                return true;
+            else if (answer =='n' || answer == 'N')
+                return false;
+        }
+    }
+        
     public void game() {
 
         boolean gameType = getGameType();
         // true = PvP game
         // false = PvC game
-
-        if(gameType){
-            PvP playersGame = new PvP();
-        }
-        else {
-            PvC pvc = new PvC();
-        }
+        boolean again;
+        do {
+            if (gameType) {
+                PvP playersGame = new PvP();
+            } else {
+                PvC pvc = new PvC();
+            }
+            again = oneMoreRound();
+        }while (again);
 
     }
 }
