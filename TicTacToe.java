@@ -155,6 +155,7 @@ public class TicTacToe {
             if (answer == 'y' || answer == 'Y')
                 return true;
             else if (answer =='n' || answer == 'N')
+                System.out.println("Thanks for playing!");
                 return false;
         }
     }
