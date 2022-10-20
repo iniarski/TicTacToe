@@ -4,5 +4,6 @@ public class Main {
         TicTacToe tic = new TicTacToe();
         tic.game();
 
+        System.exit(0);
     }
 }
